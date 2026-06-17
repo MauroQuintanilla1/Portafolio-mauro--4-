@@ -1,0 +1,135 @@
+/* =============================================
+   TESTIMONIOS
+   ============================================= */
+
+.seccion-testimonios {
+  padding: 40px 20px 80px;
+  background: var(--blanco);
+}
+
+.testimonios-intro {
+  max-width: 560px;
+  margin: 16px 0 50px 20px;
+  font-size: 18px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.testimonios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+  margin-top: 20px;
+}
+
+.card-testimonio {
+  background: #fff;
+  border-radius: 18px;
+  padding: 32px 28px 28px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(62, 121, 165, 0.1);
+  position: relative;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.card-testimonio:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 42px rgba(62, 121, 165, 0.16);
+}
+
+/* Comilla decorativa */
+.card-testimonio::before {
+  content: "\201C";
+  position: absolute;
+  top: -10px;
+  left: 24px;
+  font-size: 90px;
+  line-height: 1;
+  color: var(--celeste);
+  opacity: 0.25;
+  font-family: Georgia, serif;
+  pointer-events: none;
+}
+
+.testimonio-estrellas {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+
+.estrella {
+  width: 18px;
+  height: 18px;
+  fill: #f59e0b;
+}
+
+.testimonio-texto {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.7;
+  margin: 0 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonio-autor {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-top: 1px solid rgba(62, 121, 165, 0.12);
+  padding-top: 18px;
+}
+
+.autor-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--azul), var(--celeste));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.autor-nombre {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--negro);
+  margin: 0 0 3px;
+}
+
+.autor-rol {
+  font-size: 13px;
+  color: var(--azul);
+  margin: 0;
+  font-weight: 600;
+}
+
+/* =============================================
+   RESPONSIVE — TESTIMONIOS
+   ============================================= */
+
+@media (max-width: 768px) {
+  .testimonios-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card-testimonio {
+    padding: 26px 20px 22px;
+  }
+
+  .testimonio-texto {
+    font-size: 15px;
+  }
+
+  .testimonios-intro {
+    margin-left: 0;
+    font-size: 16px;
+  }
+}

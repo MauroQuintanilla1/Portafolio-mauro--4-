@@ -1,0 +1,470 @@
+:root {
+  --blanco: #fefeff;
+  --negro: #2b2c2c;
+  --celeste: #5aaab8;
+  --azul: #3e79a5;
+}
+
+/* SOBRE MI */
+
+.titulo-seccion {
+  color: var(--azul);
+  font-size: 38px;
+  border-bottom: 5px solid var(--azul);
+  width: 240px;
+  padding-bottom: 10px;
+  margin-left: 20px;
+}
+
+.contenedor-sobre {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding: 20px;
+  gap: 10px;
+}
+
+.info {
+  width: 50%;
+  margin-left: 2rem;
+}
+
+.etiqueta {
+  background: var(--celeste);
+  padding: 15px 40px;
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: var(--blanco);
+}
+
+.nombre {
+  color: var(--azul);
+}
+
+.descripcion {
+  margin-top: 20px;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+/* PERFIL */
+
+.perfil {
+  width: 40%;
+  margin-top: -60px;
+  margin-right: 2rem;
+  position: relative;
+}
+
+.perfil-foto {
+  position: relative;
+  justify-content: center;
+  display: flex;
+}
+
+.foto {
+  width: 290px;
+  height: 380px;
+  background: url(../imagenes/foto-mauro.jpeg);
+  background-size: cover;
+  background-position: center;
+  margin: auto;
+  z-index: 3;
+}
+
+.bg-azul {
+  width: 360px;
+  height: 160px;
+  border-radius: 20px;
+  background-color: var(--azul);
+  bottom: -70px;
+  right: 50px !important;
+  z-index: 1;
+  position: absolute;
+}
+
+/*-------------------------------*/
+.descargarCV {
+  position: absolute;
+  bottom: -30px;
+  right: 110px;
+  width: 240px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  background: #0f0f0f;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 5;
+}
+
+/* IMPORTANTE: evitar que capas bloqueen el click */
+.descargarCV * {
+  pointer-events: none;
+}
+
+.descargarCV {
+  pointer-events: auto;
+}
+
+/* Fondo líquido */
+.liquid-bg {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--celeste), var(--azul));
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  z-index: 1;
+}
+
+.textButton {
+  position: relative;
+  z-index: 2;
+  margin-left: 20px;
+  font-size: 17px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  transition: color 0.3s ease;
+}
+
+/* ICONO */
+.icon-wrapper {
+  position: relative;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.icon-wrapper svg {
+  width: 22px;
+  height: 22px;
+
+  stroke: var(--celeste); /* 👈 clave */
+  fill: none;
+
+  transition: all 0.3s ease;
+}
+
+/* HOVER */
+.descargarCV:hover svg {
+  border-color: var(--celeste);
+  stroke: var(--blanco); /* 👈 clave */
+  transform: translateY(-10px);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(0, 173, 238, 0.2);
+}
+
+.descargarCV:hover .liquid-bg {
+  top: 0;
+}
+
+.descargarCV:hover .icon-wrapper {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1) rotate(-5deg);
+  border-color: white;
+}
+
+.descargarCV:hover .icon-wrapper svg {
+  fill: white;
+  filter: drop-shadow(0 0 8px white);
+  animation: simpleBounce 0.8s infinite alternate;
+}
+
+@keyframes simpleBounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-4px);
+  }
+}
+
+.descargarCV:active {
+  transform: translateY(-2px) scale(0.98);
+}
+/*-------------------------------*/
+
+/* HABILIDADES TÉCNICAS */
+
+.habilidades-tecnicas {
+  width: 100%;
+  margin-top: 80px;
+  overflow: hidden;
+}
+
+.habilidades-bloque {
+  padding: 38px 42px 56px;
+}
+
+.bloque-azul {
+  background: var(--azul);
+}
+
+.bloque-celeste {
+  background: var(--celeste);
+}
+
+.bloque-negro {
+  background: var(--negro);
+}
+
+.bloque-superior {
+  padding-top: 22px;
+  padding-bottom: 48px;
+}
+
+.bloque-inferior {
+  padding-top: 44px;
+  padding-bottom: 44px;
+}
+
+.habilidades-titulo {
+  color: var(--blanco);
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.habilidades-linea {
+  display: block;
+  width: 95px;
+  height: 7px;
+  background: var(--blanco);
+  margin: 12px 0 18px;
+}
+
+.grupo-habilidad h3 {
+  color: var(--blanco);
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+
+.chips-habilidades {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 12px;
+  align-items: center;
+}
+
+.chip-habilidad {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 0 16px;
+  background: var(--blanco);
+  color: var(--azul);
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.chip-ancho {
+  min-width: 185px;
+}
+
+.chip-ancho-mediano {
+  min-width: 175px;
+}
+
+.chip-xl {
+  min-width: 335px;
+}
+
+.chip-xxl {
+  min-width: 645px;
+  justify-content: flex-start;
+  padding-left: 36px;
+  padding-right: 36px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .foto {
+    width: 240px;
+    height: 320px;
+  }
+
+  .bg-azul {
+    width: 300px;
+    height: 140px;
+    right: 30px !important;
+    bottom: -55px;
+  }
+
+  .descargarCV {
+    right: 60px;
+    width: 220px;
+    bottom: -28px;
+  }
+
+  .chip-xxl {
+    min-width: auto;
+    white-space: normal;
+    padding: 12px 24px;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 992px) {
+  .contenedor-sobre {
+    flex-direction: column-reverse; /* perfil sube, info baja */
+    gap: 0;
+    padding: 16px;
+  }
+
+  /* Info ocupa todo el ancho */
+  .info {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 40px;
+  }
+
+  /* Perfil ocupa todo y mantiene la misma estructura relativa */
+  .perfil {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  /* Centramos el bloque de foto igual que en desktop pero centrado */
+  .perfil-foto {
+    position: relative;
+    width: 380px;
+    height: 520px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .foto {
+    width: 320px;
+    height: 400px;
+    position: absolute;
+    top: 10px; /* baja la imagen */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+  }
+
+  /* bg-azul: mismo efecto que desktop pero centrado horizontalmente */
+  /* Fondo azul detrás de la imagen */
+  .bg-azul {
+    width: 360px;
+    height: 150px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 55px;
+    right: auto !important;
+    z-index: 1;
+  }
+
+  /* Botón encima de todo */
+  .descargarCV {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 15px;
+    right: auto;
+    width: 235px;
+    z-index: 5;
+  }
+
+  /* Chips */
+  .chip-ancho,
+  .chip-ancho-mediano,
+  .chip-xl,
+  .chip-xxl {
+    min-width: auto;
+  }
+
+  .chip-xxl {
+    white-space: normal;
+    justify-content: flex-start;
+    padding: 12px 20px;
+    line-height: 1.4;
+  }
+}
+/* --- tablet --- */
+@media (max-width: 768px) {
+  .habilidades-bloque {
+    padding: 30px 22px 38px;
+  }
+
+  .habilidades-titulo {
+    font-size: 28px;
+  }
+
+  .grupo-habilidad h3 {
+    font-size: 16px;
+  }
+
+  .chip-habilidad {
+    font-size: 14px;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.3;
+    padding: 10px 16px;
+  }
+
+  .habilidades-linea {
+    width: 80px;
+    height: 6px;
+  }
+}
+
+/* --- Móvil (≤ 600px) --- */
+@media (max-width: 600px) {
+  .perfil-foto {
+    width: 280px;
+    height: 390px;
+  }
+
+  .foto {
+    width: 230px;
+    height: 300px;
+    top: 10px;
+  }
+
+  .bg-azul {
+    width: 260px;
+    height: 110px;
+    bottom: 45px;
+  }
+
+  .descargarCV {
+    width: 210px;
+    height: 58px;
+    bottom: 10px;
+  }
+
+  .textButton {
+    font-size: 14px;
+  }
+}

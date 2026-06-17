@@ -1,0 +1,240 @@
+/* =============================================
+   CONTACTO
+   ============================================= */
+
+.seccion-contacto {
+  padding: 30px 100px; /*t-r-b-l*/
+}
+
+.contacto-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: 50px;
+  max-width: 1100px;
+}
+
+/* ---- Panel izquierdo ---- */
+.contacto-info {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.contacto-bajada {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.contacto-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contacto-item {
+  max-width: 250px;
+  width: 200px !important;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  text-decoration: none;
+  color: var(--negro);
+  transition: transform 0.28s ease;
+}
+
+.contacto-item:hover {
+  transform: translateX(8px);
+}
+
+.contacto-item-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--azul), var(--celeste));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+.contacto-item:hover .contacto-item-icon {
+  transform: scale(1.1) rotate(-5deg);
+  box-shadow: 0 8px 20px rgba(62, 121, 165, 0.35);
+}
+
+.contacto-item-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: #fff;
+}
+
+.contacto-item-label {
+  font-size: 13px;
+  color: var(--azul);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 3px;
+}
+
+.contacto-item-valor {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--negro);
+}
+
+/* ---- Formulario ---- */
+.contacto-form {
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px 36px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.07);
+  border: 1px solid rgba(62, 121, 165, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--azul);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: 2px solid rgba(62, 121, 165, 0.18);
+  border-radius: 12px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 16px;
+  color: var(--negro);
+  background: #fafafa;
+  outline: none;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+  box-sizing: border-box;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: var(--azul);
+  box-shadow: 0 0 0 4px rgba(62, 121, 165, 0.12);
+  background: #fff;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.form-fila {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.btn-enviar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 30px;
+  background: var(--negro);
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-enviar::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--celeste), var(--azul));
+  transition: top 0.45s cubic-bezier(0.77, 0, 0.175, 1);
+  z-index: 0;
+}
+
+.btn-enviar:hover::before {
+  top: 0;
+}
+
+.btn-enviar span,
+.btn-enviar svg {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-enviar svg {
+  width: 20px;
+  height: 20px;
+  fill: #fff;
+  transition: transform 0.3s ease;
+}
+
+.btn-enviar:hover svg {
+  transform: translateX(5px);
+}
+
+/* Estado enviado */
+.btn-enviar.enviado {
+  pointer-events: none;
+  background: #10b981;
+}
+
+.btn-enviar.enviado::before {
+  display: none;
+}
+
+/* =============================================
+   RESPONSIVE — CONTACTO
+   ============================================= */
+
+@media (max-width: 900px) {
+  .contacto-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-fila {
+    grid-template-columns: 1fr;
+  }
+
+  .contacto-form {
+    padding: 28px 20px;
+  }
+
+  .contacto-bajada {
+    font-size: 16px;
+  }
+}

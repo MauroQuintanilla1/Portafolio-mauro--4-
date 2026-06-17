@@ -1,0 +1,209 @@
+/* NAVBAR */
+
+.barra {
+  position: fixed;
+  height: 70px;
+  top: 0;
+  right: 0 !important;
+  left: 0;
+  width: 100%;
+  background: var(--negro);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: white;
+  z-index: 9999;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+}
+
+.menu button {
+  background: none;
+  border: none;
+
+  color: white;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  padding: 10px 25px;
+
+  border-radius: 30px;
+
+  font-family: "Josefin Sans";
+}
+
+.menu button.activo {
+  background: var(--celeste);
+  color: white;
+  /* transition opcional para que el cambio de color sea suave */
+  transition: background 0.3s ease;
+}
+
+.menu button:hover:not(.activo) {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.logo-nav {
+  width: 130px;
+}
+
+.idioma {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  overflow: hidden;
+
+  background: linear-gradient(135deg, var(--celeste), var(--azul));
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.15),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    filter 0.3s ease;
+
+  margin-right: 20px;
+}
+
+/* Brillo animado */
+.idioma::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
+  transform: skewX(-25deg);
+  transition: left 0.6s ease;
+}
+
+.idioma:hover::before {
+  left: 160%;
+}
+
+/* Hover */
+.idioma:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow:
+    0 14px 28px rgba(62, 121, 165, 0.35),
+    0 0 18px rgba(90, 170, 184, 0.35);
+}
+
+/* Click */
+.idioma:active {
+  transform: scale(0.95);
+}
+
+/* Texto */
+.idioma-texto {
+  position: relative;
+  z-index: 2;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+/* Animación al cambiar idioma */
+.idioma.cambiando .idioma-texto {
+  animation: idiomaFlip 0.45s ease;
+}
+
+@keyframes idiomaFlip {
+  0% {
+    opacity: 0;
+    transform: rotateX(90deg) scale(0.8);
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg) scale(1);
+  }
+}
+
+/* ---- NAVBAR ---- */
+@media (max-width: 1100px) {
+  .menu button {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 900px) {
+  .barra {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px 16px;
+    gap: 10px;
+  }
+
+  .logo-nav {
+    width: 100px;
+  }
+
+  .menu {
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    order: 3;
+    padding-bottom: 8px;
+  }
+
+  .menu button {
+    font-size: 13px;
+    padding: 7px 12px;
+  }
+
+  .idioma {
+    padding: 8px 16px;
+    font-size: 15px;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu button {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu button {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}

@@ -1,0 +1,155 @@
+:root {
+  --blanco: #fefeff;
+  --negro: #2b2c2c;
+  --celeste: #5aaab8;
+  --azul: #3e79a5;
+}
+
+body {
+  margin: 0;
+  font-family: "Josefin Sans", sans-serif;
+  background: var(--blanco);
+}
+
+/* SECCIONES */
+
+.seccion {
+  display: none;
+  margin-top: 70px;
+}
+
+.seccion-inicio {
+  padding: 20px;
+}
+
+.visible {
+  display: block;
+}
+
+/* TITULO */
+
+.titulo {
+  color: var(--azul);
+
+  font-size: 36px;
+
+  margin-bottom: 30px;
+}
+
+/* IMAGEN */
+
+.contenedor-imagen {
+  position: relative;
+  width: 80%;
+  margin: auto;
+}
+
+.img-portada {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden; /* Crucial para que el zoom se quede "dentro" */
+}
+
+.imagen-principal {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute; /* Apila una imagen sobre la otra */
+  top: 0;
+  left: 0;
+  transition:
+    transform 0.4s ease,
+    opacity 1s ease-in-out; /* Zoom y cambio suave */
+}
+
+.img-1 {
+  animation: cambioImagen 10s infinite; /* 10 segundos en total por ciclo */
+}
+
+.img-2 {
+  animation: cambioImagen 10s infinite reverse; /* Hace lo opuesto a la img-1 */
+}
+
+@keyframes cambioImagen {
+  0%,
+  45% {
+    opacity: 1;
+  } /* Visible casi la mitad del tiempo */
+  55%,
+  100% {
+    opacity: 0;
+  } /* Invisible la otra mitad */
+}
+
+/* --- EFECTO ZOOM --- */
+.contenedor-imagen:hover .imagen-principal {
+  transform: scale(1.1);
+}
+.slogan {
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  background: linear-gradient(90deg, var(--celeste), var(--azul));
+  color: white;
+  padding: 25px 50px;
+  font-size: 24px;
+  width: 60%;
+  z-index: 100;
+  display: block;
+}
+
+/* ---- SECCIÓN INICIO ---- */
+@media (max-width: 900px) {
+  .seccion {
+    margin-top: 110px;
+  }
+
+  .titulo {
+    font-size: 26px;
+  }
+
+  .contenedor-imagen {
+    width: 100%;
+  }
+
+  .img-portada {
+    height: 340px;
+  }
+
+  .slogan {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+    font-size: 18px;
+    padding: 18px 24px;
+    box-sizing: border-box;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .titulo {
+    font-size: 22px;
+  }
+  .titulo-seccion {
+    font-size: 28px;
+    width: auto;
+  }
+
+  .img-portada {
+    height: 220px;
+  }
+
+  .slogan {
+    font-size: 15px;
+    padding: 14px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .seccion {
+    margin-top: 130px;
+  }
+}

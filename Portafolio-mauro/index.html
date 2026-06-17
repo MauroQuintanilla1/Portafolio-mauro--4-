@@ -1,0 +1,988 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Metadescripción -->
+    <meta
+      name="description"
+      content="Portafolio de Mauro Salvador Quintanilla López, estudiante de Ingeniería en Sistemas"
+    />
+    <meta name="author" content="Mauro Salvador Quintanilla López" />
+
+    <!-- OG -->
+    <meta property="og:title" content="Portafolio" />
+    <meta
+      property="og:description"
+      content="Estudiante de Ingeniería en Sistemas y Redes Informáticas. FrontEnd"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+
+    <link rel="stylesheet" href="css/nabvar.css" />
+    <link rel="stylesheet" href="redes-soc.css" />
+    <link rel="stylesheet" href="css/style-inicio.css" />
+    <link rel="stylesheet" href="css/style-sobre.css" />
+    <link rel="stylesheet" href="css/style-proyectos.css" />
+    <link rel="stylesheet" href="css/style-certificados.css" />
+    <link rel="stylesheet" href="css/style-testimonios.css" />
+    <link rel="stylesheet" href="css/style-contacto.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+
+    <title>Portafolio</title>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <nav class="barra">
+      <img src="imagenes/logo/mauro-cyan.svg" class="logo-nav" alt="" />
+
+      <div class="menu">
+        <button
+          class="activo"
+          onclick="mostrarSeccion('inicio')"
+          data-es="Inicio"
+          data-en="Home"
+        ></button>
+
+        <button
+          onclick="mostrarSeccion('sobre')"
+          data-es="Sobre mí"
+          data-en="About me"
+        ></button>
+
+        <button
+          onclick="mostrarSeccion('proyectos')"
+          data-es="Proyectos"
+          data-en="Projects"
+        ></button>
+
+        <button
+          onclick="mostrarSeccion('certificados')"
+          data-es="Certificados"
+          data-en="Certificates"
+        ></button>
+
+        <button
+          onclick="mostrarSeccion('testimonios')"
+          data-es="Testimonios"
+          data-en="Testimonials"
+        ></button>
+
+        <button
+          onclick="mostrarSeccion('contacto')"
+          data-es="Contacto"
+          data-en="Contact"
+        ></button>
+      </div>
+
+      <a class="idioma" id="btnIdioma" aria-label="Cambiar idioma">
+        <span class="idioma-texto">ES</span>
+      </a>
+    </nav>
+
+    <!-- REDES SOCIALES -->
+    <div class="redes">
+      <a class="icono btn-github" href="https://github.com/MauroQuintanilla1">
+        <svg
+          fill="#fff"
+          width="30px"
+          height="30px"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12,2.2467A10.00042,10.00042,0,0,0,8.83752,21.73419c.5.08752.6875-.21247.6875-.475,0-.23749-.01251-1.025-.01251-1.86249C7,19.85919,6.35,18.78423,6.15,18.22173A3.636,3.636,0,0,0,5.125,16.8092c-.35-.1875-.85-.65-.01251-.66248A2.00117,2.00117,0,0,1,6.65,17.17169a2.13742,2.13742,0,0,0,2.91248.825A2.10376,2.10376,0,0,1,10.2,16.65923c-2.225-.25-4.55-1.11254-4.55-4.9375a3.89187,3.89187,0,0,1,1.025-2.6875,3.59373,3.59373,0,0,1,.1-2.65s.83747-.26251,2.75,1.025a9.42747,9.42747,0,0,1,5,0c1.91248-1.3,2.75-1.025,2.75-1.025a3.59323,3.59323,0,0,1,.1,2.65,3.869,3.869,0,0,1,1.025,2.6875c0,3.83747-2.33752,4.6875-4.5625,4.9375a2.36814,2.36814,0,0,1,.675,1.85c0,1.33752-.01251,2.41248-.01251,2.75,0,.26251.1875.575.6875.475A10.0053,10.0053,0,0,0,12,2.2467Z"
+          />
+        </svg>
+      </a>
+
+      <a
+        class="icono btn-linkedin"
+        href="https://www.linkedin.com/in/mauro-quintanilla-9723693b4/"
+      >
+        <svg
+          width="40px"
+          height="40px"
+          viewBox="0 0 48 48"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="24" cy="24" r="20" fill="#0077B5" />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M18.7747 14.2839C18.7747 15.529 17.8267 16.5366 16.3442 16.5366C14.9194 16.5366 13.9713 15.529 14.0007 14.2839C13.9713 12.9783 14.9193 12 16.3726 12C17.8267 12 18.7463 12.9783 18.7747 14.2839ZM14.1199 32.8191V18.3162H18.6271V32.8181H14.1199V32.8191Z"
+            fill="white"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M22.2393 22.9446C22.2393 21.1357 22.1797 19.5935 22.1201 18.3182H26.0351L26.2432 20.305H26.3322C26.9254 19.3854 28.4079 17.9927 30.8101 17.9927C33.7752 17.9927 35.9995 19.9502 35.9995 24.219V32.821H31.4922V24.7838C31.4922 22.9144 30.8404 21.6399 29.2093 21.6399C27.9633 21.6399 27.2224 22.4999 26.9263 23.3297C26.8071 23.6268 26.7484 24.0412 26.7484 24.4574V32.821H22.2411V22.9446H22.2393Z"
+            fill="white"
+          />
+        </svg>
+      </a>
+
+      <a
+        class="icono btn-gmail"
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=qmauro6@gmail.com"
+      >
+        <svg
+          fill="#fff"
+          width="30px"
+          height="30px"
+          viewBox="0 0 216 216"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M108,0C48.353,0,0,48.353,0,108s48.353,108,108,108s108-48.353,108-108S167.647,0,108,0z M156.657,60L107.96,98.498 L57.679,60H156.657z M161.667,156h-109V76.259l50.244,38.11c1.347,1.03,3.34,1.545,4.947,1.545c1.645,0,3.073-0.54,4.435-1.616 l49.374-39.276V156z"
+            fill="#fff"
+          />
+        </svg>
+      </a>
+    </div>
+
+    <!-- ==================== INICIO ==================== -->
+    <section id="inicio" class="seccion visible seccion-inicio">
+      <h1
+        class="titulo"
+        data-es="Estudiante de Ingeniería en Sistemas y Redes Informáticas"
+        data-en="Student of Computer Systems and Networks Engineering"
+      ></h1>
+
+      <div class="contenedor-imagen">
+        <div class="img-portada">
+          <img
+            src="imagenes/img-pc.jpg"
+            class="imagen-principal img-1"
+            alt="Desarrollo web"
+          />
+          <img
+            src="imagenes/img-design.jpg"
+            class="imagen-principal img-2"
+            alt="Diseño UX/UI"
+          />
+        </div>
+
+        <div
+          class="slogan"
+          data-es='<span>"</span>Menos código, menos errores.<span>"</span>'
+          data-en='<span>"</span>Less code, fewer errors.<span>"</span>'
+        ></div>
+      </div>
+    </section>
+
+    <!-- ==================== SOBRE MI ==================== -->
+    <section id="sobre" class="seccion seccion-sobre">
+      <br />
+      <h2 class="titulo-seccion" data-es="SOBRE MÍ" data-en="ABOUT ME"></h2>
+
+      <div class="contenedor-sobre">
+        <div class="info">
+          <div class="infor-sobremi">
+            <div class="etiqueta">Jr. FrontEnd</div>
+            <h3 class="nombre">MAURO SALVADOR QUINTANILLA LÓPEZ</h3>
+            <p
+              class="descripcion"
+              data-es="Estudiante de Ingeniería en Sistemas con un fuerte enfoque en el Diseño de Experiencia de Usuario (UX). Mi experiencia como cajero me permitió desarrollar una observación aguda sobre las frustraciones reales de los usuarios y la eficiencia en procesos transaccionales. Combino el rigor técnico de la ingeniería con la capacidad de crear interfaces intuitivas y centradas en el ser humano."
+              data-en="Systems Engineering student with a strong focus on User Experience (UX) Design. My experience as a cashier allowed me to develop keen observation of real user frustrations and efficiency in transactional processes. I combine the technical rigor of engineering with the ability to create intuitive, human-centered interfaces."
+            ></p>
+            <span
+              style="color: #3e79a5; font-size: 1.2rem; font-weight: bold"
+              data-es="Intereses profesionales"
+              data-en="Professional interests"
+            ></span>
+            <p
+              class="descripcion"
+              data-es="Me apasiona crear interfaces funcionales y centradas en el usuario. <br> Mi trayectoria me ha aportado una sólida atención al detalle y capacidad de resolución de problemas. Cuento con disponibilidad inmediata para aportar mis habilidades técnicas y organizativas al crecimiento de la empresa."
+              data-en="I am passionate about creating functional, user-centered interfaces. <br> My career has given me a strong attention to detail and problem-solving skills. I am available immediately to contribute my technical and organizational skills to the company's growth."
+            ></p>
+          </div>
+        </div>
+
+        <div class="perfil">
+          <div class="perfil-foto">
+            <div class="foto"></div>
+            <a
+              class="descargarCV"
+              href="cv/CV-Mauro-Salvador-UX-UI-Frontend.pdf"
+              download
+            >
+              <div class="liquid-bg"></div>
+              <span
+                class="textButton"
+                data-es="Descargar CV"
+                data-en="Download CV"
+              ></span>
+              <div class="icon-wrapper">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </a>
+            <div class="bg-azul"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="habilidades-tecnicas">
+        <div class="habilidades-bloque bloque-azul bloque-superior">
+          <h2
+            class="habilidades-titulo"
+            data-es="HABILIDADES TÉCNICAS"
+            data-en="TECHNICAL SKILLS"
+          ></h2>
+          <span class="habilidades-linea"></span>
+          <div class="grupo-habilidad">
+            <h3>Diseño UX/UI</h3>
+            <div class="chips-habilidades">
+              <span
+                class="chip-habilidad"
+                data-es="Prototipado"
+                data-en="Prototyping"
+              ></span>
+              <span class="chip-habilidad">User Flows</span>
+              <span class="chip-habilidad">Wireframing</span>
+              <span
+                class="chip-habilidad chip-ancho"
+                data-es="Diseño de Sistemas"
+                data-en="Systems Design"
+              ></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="habilidades-bloque bloque-celeste">
+          <div class="grupo-habilidad">
+            <h3 data-es="Investigación" data-en="Investigation"></h3>
+            <div class="chips-habilidades">
+              <span
+                class="chip-habilidad"
+                data-es="Pruebas de usabilidad"
+                data-en="Usability testing"
+              ></span>
+              <span
+                class="chip-habilidad chip-xl"
+                data-es="Análisis de necesidades de usuario"
+                data-en="User needs analysis"
+              ></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="habilidades-bloque bloque-negro">
+          <div class="grupo-habilidad">
+            <h3 data-es="Herramientas" data-en="Tools"></h3>
+            <div class="chips-habilidades">
+              <span class="chip-habilidad">Figma</span>
+              <span class="chip-habilidad">Adobe suite</span>
+              <span class="chip-habilidad chip-ancho-mediano"
+                >Android Studio</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="habilidades-bloque bloque-azul bloque-inferior">
+          <div class="grupo-habilidad">
+            <h3 data-es="Desarrollo" data-en="Development"></h3>
+            <div class="chips-habilidades">
+              <span
+                class="chip-habilidad chip-xxl"
+                data-es="Conocimiento en FrontEnd (HTML/CSS) para integración de interfaces"
+                data-en="Knowledge of FrontEnd (HTML/CSS) for interface integration"
+              >
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PROYECTOS ==================== -->
+    <section id="proyectos" class="seccion seccion-proyectos">
+      <h2 class="titulo-seccion" data-es="PROYECTOS" data-en="PROJECTS"></h2>
+
+      <div class="proyectos-grid">
+        <a
+          href="proyectos/Cubfinder/cubfinder.html"
+          onclick="guardarSeccion('proyectos')"
+          class="card-proyecto"
+        >
+          <img src="proyectos/Cubfinder/image1.png" alt="Proyecto Cubfinder" />
+          <div class="info">
+            <h3 data-es="Cubfinder" data-en="Cubfinder">Cubfinder</h3>
+            <p data-es="QA, Front-End" data-en="QA, Front-End">QA, Front-End</p>
+          </div>
+        </a>
+
+        <a
+          href="proyectos/consolexpress/console.html"
+          onclick="guardarSeccion('proyectos')"
+          class="card-proyecto"
+        >
+          <img
+            src="proyectos/consolexpress/img1.png"
+            alt="Proyecto ConsoleXpress"
+          />
+          <div class="info">
+            <h3 data-es="ConsoleXpress" data-en="ConsoleXpress">
+              ConsoleXpress
+            </h3>
+            <p data-es="Front-End" data-en="Front-End">Front-End</p>
+          </div>
+        </a>
+
+        <a
+          href="proyectos/sistema-inscripcion/sistema-inscripcion.html"
+          onclick="guardarSeccion('proyectos')"
+          class="card-proyecto"
+        >
+          <img src="img/proyecto3.jpg" alt="Sistema de inscripción" />
+          <div class="info">
+            <h3 data-es="Sistema de inscripción" data-en="Enrollment System">
+              Sistema de inscripción
+            </h3>
+            <p data-es="Front-End" data-en="Front-End">Front-End</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ==================== CERTIFICADOS ==================== -->
+    <section id="certificados" class="seccion seccion-certificados">
+      <h2
+        class="titulo-seccion"
+        data-es="CERTIFICADOS"
+        data-en="CERTIFICATES"
+      ></h2>
+
+      <div class="certificados-grid">
+        <!-- Certificado 1 -->
+        <div class="card-certificado">
+          <div class="cert-header">
+            <div class="cert-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"
+                />
+              </svg>
+            </div>
+            <div>
+              <p class="cert-emisor">UGB</p>
+              <h3
+                class="cert-nombre"
+                data-es="Diploma 3er lugar Programación"
+                data-en="Responsive Web Design"
+              ></h3>
+            </div>
+          </div>
+
+          <div class="cert-preview">
+            <img
+              src="imagenes/certificados/diploma-tercer-lugar-automatizacion-y-robotica-progra3.webp"
+              alt="Vista previa del certificado"
+            />
+          </div>
+
+          <div class="cert-body">
+            <span
+              class="cert-fecha"
+              data-es="Marzo 2024"
+              data-en="March 2024"
+            ></span>
+            <p
+              class="cert-descripcion"
+              data-es="Certificación en HTML5, CSS3 y técnicas de diseño responsivo con flexbox y grid."
+              data-en="Certification in HTML5, CSS3, and responsive design techniques using flexbox and grid."
+            ></p>
+            <div class="cert-tags">
+              <span class="cert-tag">Programación</span>
+              <span class="cert-tag">HTML</span>
+              <span class="cert-tag">CSS</span>
+            </div>
+            <a
+              href="imagenes/certificados/DIPLOMA FINAL-36.pdf"
+              class="cert-link"
+            >
+              <span data-es="Ver certificado" data-en="View certificate"></span>
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M10 6v2H5v11h11v-5h2v7H3V6h7zm7-3v8l-3-3-7 7-1.41-1.41L13 6.41 10 3.41z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Certificado 2 -->
+        <div class="card-certificado">
+          <div class="cert-header">
+            <div class="cert-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"
+                />
+              </svg>
+            </div>
+            <div>
+              <p class="cert-emisor">FLISOL</p>
+              <h3
+                class="cert-nombre"
+                data-es="Staff Organizador 22° FLISOL"
+                data-en="Introduction to Android Studio"
+              ></h3>
+            </div>
+          </div>
+          <div class="cert-preview">
+            <img
+              src="imagenes/certificados/DIPLOMA-FINAL-Mauro.jpg"
+              alt="Vista previa del certificado"
+            />
+          </div>
+
+          <div class="cert-body">
+            <span
+              class="cert-fecha"
+              data-es="Junio 2024"
+              data-en="June 2024"
+            ></span>
+            <p
+              class="cert-descripcion"
+              data-es="Fundamentos del desarrollo de aplicaciones móviles Android: layouts, navegación y componentes básicos."
+              data-en="Foundations of Android mobile application development: layouts, navigation, and basic components."
+            ></p>
+            <div class="cert-tags">
+              <span class="cert-tag">Android</span>
+              <span class="cert-tag">Kotlin</span>
+              <span class="cert-tag">Mobile</span>
+            </div>
+            <a href="#" class="cert-link">
+              <span data-es="Ver certificado" data-en="View certificate"></span>
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M10 6v2H5v11h11v-5h2v7H3V6h7zm7-3v8l-3-3-7 7-1.41-1.41L13 6.41 10 3.41z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Certificado 3 -->
+        <div class="card-certificado">
+          <div class="cert-header">
+            <div class="cert-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                />
+              </svg>
+            </div>
+            <div>
+              <p class="cert-emisor">Adobe</p>
+              <h3
+                class="cert-nombre"
+                data-es="Adobe XD — Diseño de Interfaces"
+                data-en="Adobe XD — Interface Design"
+              ></h3>
+            </div>
+          </div>
+          <div class="cert-preview">
+            <img
+              src="imagenes/certificados/certificado-ux.webp"
+              alt="Vista previa del certificado"
+            />
+          </div>
+
+          <div class="cert-body">
+            <span
+              class="cert-fecha"
+              data-es="Septiembre 2024"
+              data-en="September 2024"
+            ></span>
+            <p
+              class="cert-descripcion"
+              data-es="Creación de prototipos interactivos y sistemas de diseño utilizando Adobe XD y herramientas de la suite."
+              data-en="Creating interactive prototypes and design systems using Adobe XD and suite tools."
+            ></p>
+            <div class="cert-tags">
+              <span class="cert-tag">Adobe XD</span>
+              <span class="cert-tag">Prototyping</span>
+              <span class="cert-tag">UI</span>
+            </div>
+            <a href="#" class="cert-link">
+              <span data-es="Ver certificado" data-en="View certificate"></span>
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M10 6v2H5v11h11v-5h2v7H3V6h7zm7-3v8l-3-3-7 7-1.41-1.41L13 6.41 10 3.41z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TESTIMONIOS ==================== -->
+    <section id="testimonios" class="seccion seccion-testimonios">
+      <h2
+        class="titulo-seccion"
+        data-es="TESTIMONIOS"
+        data-en="TESTIMONIALS"
+      ></h2>
+      <p
+        class="testimonios-intro"
+        data-es="Lo que dicen quienes han trabajado conmigo."
+        data-en="What those who have worked with me say."
+      ></p>
+
+      <div class="testimonios-grid">
+        <!-- Testimonio 1 -->
+        <div class="card-testimonio">
+          <div class="testimonio-estrellas">
+            <svg class="estrella" viewBox="0 0 24 24">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="estrella" viewBox="0 0 24 24">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="estrella" viewBox="0 0 24 24">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="estrella" viewBox="0 0 24 24">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="estrella" viewBox="0 0 24 24">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+          </div>
+          <p
+            class="testimonio-texto"
+            data-es="Mauro tiene una capacidad notable para entender las necesidades del usuario desde el primer momento. Sus prototipos siempre están bien pensados y son fáciles de iterar. Es responsable, puntual y muy proactivo en sus propuestas."
+            data-en="Mauro has a remarkable ability to understand user needs from the very start. His prototypes are always well thought out and easy to iterate on. He is responsible, punctual, and very proactive with his proposals."
+          ></p>
+          <div class="testimonio-autor">
+            <div class="autor-avatar">CR</div>
+            <div>
+              <p class="autor-nombre">Carlos R.</p>
+              <p
+                class="autor-rol"
+                data-es="Docente universitario · UX/UI"
+                data-en="University lecturer · UX/UI"
+              ></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonio 2 -->
+        <div class="card-testimonio">
+          <div class="testimonio-estrellas">
+            <svg class="estrella" viewBox="0 0 24 24">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="estrella" viewBox="0 0 24 24">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="estrella" viewBox="0 0 24 24">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="estrella" viewBox="0 0 24 24">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="estrella" viewBox="0 0 24 24">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+          </div>
+          <p
+            class="testimonio-texto"
+            data-es="Trabajamos juntos en el proyecto Cubfinder y Mauro demostró gran atención al detalle en las pruebas QA. Detectó errores que pasamos por alto y siempre propuso soluciones claras. Un compañero en quien confiar."
+            data-en="We worked together on the Cubfinder project and Mauro showed great attention to detail in QA testing. He caught bugs we missed and always proposed clear solutions. A teammate you can rely on."
+          ></p>
+          <div class="testimonio-autor">
+            <div class="autor-avatar">AM</div>
+            <div>
+              <p class="autor-nombre">Andrea M.</p>
+              <p
+                class="autor-rol"
+                data-es="Compañera de proyecto · FrontEnd"
+                data-en="Project partner · FrontEnd"
+              ></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonio 3 -->
+        <div class="card-testimonio">
+          <div class="testimonio-estrellas">
+            <svg class="estrella" viewBox="0 0 24 24">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="estrella" viewBox="0 0 24 24">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="estrella" viewBox="0 0 24 24">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="estrella" viewBox="0 0 24 24">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="estrella" viewBox="0 0 24 24">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+          </div>
+          <p
+            class="testimonio-texto"
+            data-es="Lo que más destaco de Mauro es cómo conecta la experiencia de usuario con la implementación técnica. No solo diseña bonito, diseña pensando en quién lo va a usar. Eso es raro y muy valioso."
+            data-en="What stands out most about Mauro is how he connects user experience with technical implementation. He doesn't just design for aesthetics — he designs with the end user in mind. That's rare and very valuable."
+          ></p>
+          <div class="testimonio-autor">
+            <div class="autor-avatar">JP</div>
+            <div>
+              <p class="autor-nombre">Jorge P.</p>
+              <p
+                class="autor-rol"
+                data-es="Mentor · Ingeniería en Sistemas"
+                data-en="Mentor · Systems Engineering"
+              ></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACTO ==================== -->
+    <section id="contacto" class="seccion seccion-contacto">
+      <h2 class="titulo-seccion" data-es="CONTACTO" data-en="CONTACT"></h2>
+
+      <div class="contacto-wrapper">
+        <!-- Info de contacto -->
+        <div class="contacto-info">
+          <p
+            class="contacto-bajada"
+            data-es="¿Tienes un proyecto en mente o quieres saber más sobre mi trabajo? Escríbeme, estoy disponible para nuevas oportunidades."
+            data-en="Do you have a project in mind or want to know more about my work? Write to me — I'm available for new opportunities."
+          ></p>
+
+          <div class="contacto-items">
+            <a href="mailto:qmauro6@gmail.com" class="contacto-item">
+              <div class="contacto-item-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p
+                  class="contacto-item-label"
+                  data-es="Correo"
+                  data-en="Email"
+                ></p>
+                <p class="contacto-item-valor">qmauro6@gmail.com</p>
+              </div>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/mauro-quintanilla-9723693b4/"
+              target="_blank"
+              class="contacto-item"
+            >
+              <div class="contacto-item-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p class="contacto-item-label">LinkedIn</p>
+                <p class="contacto-item-valor">mauro-quintanilla</p>
+              </div>
+            </a>
+
+            <a
+              href="https://github.com/MauroQuintanilla1"
+              target="_blank"
+              class="contacto-item"
+            >
+              <div class="contacto-item-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 .5C5.7.5.7 5.7.7 12c0 5 3.2 9.3 7.6 10.8.6.1.8-.2.8-.6v-2.2c-3.1.7-3.7-1.3-3.7-1.3-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.7 1.2 3.4.9.1-.7.4-1.2.7-1.5-2.5-.3-5.2-1.2-5.2-5.3 0-1.2.4-2.2 1.1-3-.1-.3-.5-1.4.1-2.9 0 0 .9-.3 3 1.1.9-.3 1.9-.4 2.9-.4s2 .1 2.9.4c2.1-1.4 3-1.1 3-1.1.6 1.5.2 2.6.1 2.9.7.8 1.1 1.8 1.1 3 0 4.1-2.7 5-5.2 5.3.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6 4.4-1.5 7.6-5.8 7.6-10.8C23.3 5.7 18.3.5 12 .5z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p class="contacto-item-label">GitHub</p>
+                <p class="contacto-item-valor">MauroQuintanilla1</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Formulario -->
+        <div class="contacto-form">
+          <div class="form-fila">
+            <div class="form-grupo">
+              <label class="form-label" data-es="Nombre" data-en="Name"></label>
+              <input
+                type="text"
+                class="form-input"
+                id="nombre"
+                data-placeholder-es="Tu nombre"
+                data-placeholder-en="Your name"
+                placeholder="Tu nombre"
+              />
+            </div>
+            <div class="form-grupo">
+              <label
+                class="form-label"
+                data-es="Correo"
+                data-en="Email"
+              ></label>
+              <input
+                type="email"
+                class="form-input"
+                id="correo"
+                data-placeholder-es="tu@correo.com"
+                data-placeholder-en="your@email.com"
+                placeholder="tu@correo.com"
+              />
+            </div>
+          </div>
+
+          <div class="form-grupo">
+            <label
+              class="form-label"
+              data-es="Asunto"
+              data-en="Subject"
+            ></label>
+            <input
+              type="text"
+              class="form-input"
+              id="asunto"
+              data-placeholder-es="¿De qué quieres hablar?"
+              data-placeholder-en="What do you want to talk about?"
+              placeholder="¿De qué quieres hablar?"
+            />
+          </div>
+
+          <div class="form-grupo">
+            <label
+              class="form-label"
+              data-es="Mensaje"
+              data-en="Message"
+            ></label>
+            <textarea
+              class="form-textarea"
+              id="mensaje"
+              data-placeholder-es="Cuéntame sobre tu proyecto o idea..."
+              data-placeholder-en="Tell me about your project or idea..."
+              placeholder="Cuéntame sobre tu proyecto o idea..."
+            ></textarea>
+          </div>
+
+          <button
+            class="btn-enviar"
+            id="btnEnviar"
+            onclick="enviarFormulario()"
+          >
+            <span data-es="Enviar mensaje" data-en="Send message"></span>
+            <svg viewBox="0 0 24 24">
+              <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer-alt">
+      <div class="footer-alt-main">
+        <div class="footer-alt-container">
+          <!-- Branding -->
+          <div class="footer-alt-branding">
+            <h2 class="footer-alt-titulo">MAURO <span>Q.</span></h2>
+            <p
+              class="footer-alt-texto"
+              data-es="Diseño interfaces centradas en el usuario y desarrollo web de alto impacto."
+              data-en="I design user-centered interfaces and high-impact web experiences."
+            ></p>
+            <span class="footer-badge">Jr. FrontEnd · UX/UI</span>
+          </div>
+
+          <!-- Divisor vertical -->
+          <div class="footer-divider"></div>
+
+          <!-- Redes -->
+          <div class="footer-alt-info">
+            <p
+              class="footer-alt-info-titulo"
+              data-es="Encuéntrame en"
+              data-en="Find me on"
+            ></p>
+
+            <div class="footer-alt-redes">
+              <a
+                href="https://github.com/MauroQuintanilla1"
+                target="_blank"
+                class="footer-alt-item"
+              >
+                <div class="footer-alt-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 .5C5.7.5.7 5.7.7 12c0 5 3.2 9.3 7.6 10.8.6.1.8-.2.8-.6v-2.2c-3.1.7-3.7-1.3-3.7-1.3-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.7 1.2 3.4.9.1-.7.4-1.2.7-1.5-2.5-.3-5.2-1.2-5.2-5.3 0-1.2.4-2.2 1.1-3-.1-.3-.5-1.4.1-2.9 0 0 .9-.3 3 1.1.9-.3 1.9-.4 2.9-.4s2 .1 2.9.4c2.1-1.4 3-1.1 3-1.1.6 1.5.2 2.6.1 2.9.7.8 1.1 1.8 1.1 3 0 4.1-2.7 5-5.2 5.3.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6 4.4-1.5 7.6-5.8 7.6-10.8C23.3 5.7 18.3.5 12 .5z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p class="footer-alt-label">GitHub</p>
+                  <p class="footer-alt-sublabel">MauroQuintanilla1</p>
+                </div>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/mauro-quintanilla-9723693b4/"
+                target="_blank"
+                class="footer-alt-item"
+              >
+                <div class="footer-alt-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p class="footer-alt-label">LinkedIn</p>
+                  <p class="footer-alt-sublabel">mauro-quintanilla</p>
+                </div>
+              </a>
+
+              <a href="mailto:qmauro6@gmail.com" class="footer-alt-item">
+                <div class="footer-alt-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p class="footer-alt-label">Email</p>
+                  <p class="footer-alt-sublabel">qmauro6@gmail.com</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="footer-alt-bottom">
+          <p class="footer-alt-copy">© 2026 Mauro Quintanilla</p>
+          <p
+            class="footer-alt-made"
+            data-es="Hecho con <span>✦</span> en El Salvador"
+            data-en="Made with <span>✦</span> in El Salvador"
+          ></p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="idioma.js"></script>
+    <script>
+      // Formulario de contacto: abre cliente de correo
+      function enviarFormulario() {
+        const nombre = document.getElementById("nombre").value.trim();
+        const correo = document.getElementById("correo").value.trim();
+        const asunto = document.getElementById("asunto").value.trim();
+        const mensaje = document.getElementById("mensaje").value.trim();
+
+        if (!nombre || !correo || !mensaje) {
+          const lang = localStorage.getItem("idioma") || "es";
+          alert(
+            lang === "es"
+              ? "Por favor completa los campos obligatorios."
+              : "Please fill in the required fields.",
+          );
+          return;
+        }
+
+        const cuerpo = `Nombre: ${nombre}\nCorreo: ${correo}\n\n${mensaje}`;
+        const mailto = `mailto:qmauro6@gmail.com?subject=${encodeURIComponent(asunto || "Contacto desde portafolio")}&body=${encodeURIComponent(cuerpo)}`;
+        window.location.href = mailto;
+
+        const btn = document.getElementById("btnEnviar");
+        btn.classList.add("enviado");
+        const lang = localStorage.getItem("idioma") || "es";
+        btn.querySelector("span").textContent =
+          lang === "es" ? "¡Enviado!" : "Sent!";
+        setTimeout(() => {
+          btn.classList.remove("enviado");
+          const sp = btn.querySelector("span");
+          sp.setAttribute("data-es", "Enviar mensaje");
+          sp.setAttribute("data-en", "Send message");
+          sp.textContent = lang === "es" ? "Enviar mensaje" : "Send message";
+        }, 3000);
+      }
+
+      // Actualizar placeholders al cambiar idioma
+      function actualizarPlaceholders() {
+        const lang = localStorage.getItem("idioma") || "es";
+        document.querySelectorAll("[data-placeholder-es]").forEach((el) => {
+          el.placeholder = el.getAttribute(`data-placeholder-${lang}`);
+        });
+      }
+
+      // Observar cambios de idioma
+      const originalAplicar = window.aplicarIdioma;
+      document.addEventListener("DOMContentLoaded", () => {
+        actualizarPlaceholders();
+        document.getElementById("btnIdioma")?.addEventListener("click", () => {
+          setTimeout(actualizarPlaceholders, 50);
+        });
+      });
+    </script>
+  </body>
+</html>

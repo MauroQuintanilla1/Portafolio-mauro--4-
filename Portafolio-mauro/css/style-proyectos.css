@@ -1,0 +1,142 @@
+.seccion-proyectos {
+  padding: 40px 20px;
+}
+
+/* GRID */
+.proyectos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* CARD */
+.card-proyecto {
+  position: relative;
+  display: block;
+  text-decoration: none;
+
+  border-radius: 18px;
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+  transition: all 0.4s ease;
+  color: #2b2c2c;
+}
+
+/* BORDE SUAVE GRADIENTE */
+.card-proyecto::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: 18px;
+
+  background: linear-gradient(135deg, #344fa0, #ea5d4c);
+
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  opacity: 0;
+  transition: 0.4s;
+}
+
+/* IMAGEN */
+.card-proyecto img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* INFO */
+.card-proyecto .info {
+  padding: 18px;
+}
+
+.card-proyecto h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #2e3453;
+  font-weight: 700;
+}
+
+.card-proyecto p {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #344fa0;
+  font-weight: 500;
+}
+
+/* HOVER EFECTO */
+.card-proyecto:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 45px rgba(52, 79, 160, 0.25);
+}
+
+.card-proyecto:hover img {
+  transform: scale(1.08);
+}
+
+.card-proyecto:hover::before {
+  opacity: 1;
+}
+
+/* OVERLAY SUAVE (NO ABURRIDO) */
+.card-proyecto::after {
+  content: "Ver proyecto →";
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    180deg,
+    rgba(46, 53, 83, 0.2),
+    rgba(76, 221, 234, 0.6)
+  );
+  color: #fff;
+
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 1px;
+
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.card-proyecto:hover::after {
+  opacity: 1;
+}
+
+/* TAG ESTILO MINI (ROL) */
+.card-proyecto .info p::before {
+  content: "• ";
+  color: #ea5d4c;
+}
+
+/* ---- SECCIÓN PROYECTOS ---- */
+@media (max-width: 768px) {
+  .seccion-proyectos {
+    padding: 30px 16px;
+  }
+
+  .proyectos-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 28px;
+  }
+
+  .card-proyecto img {
+    height: 200px;
+  }
+}
