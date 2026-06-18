@@ -9,6 +9,7 @@
 .certificados-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  justify-content: center;
   gap: 28px;
   margin-top: 40px;
 }
@@ -24,6 +25,8 @@
     box-shadow 0.35s ease;
   display: flex;
   flex-direction: column;
+  max-width: 380px;
+  margin: 0 auto;
 }
 
 .card-certificado:hover {
