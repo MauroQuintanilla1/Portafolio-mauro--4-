@@ -110,6 +110,35 @@
   font-weight: 600;
 }
 
+/* Botón de referencia dentro del testimonio */
+.referencia-btn {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: #ffffff;
+  color: var(--azul);
+  text-decoration: none;
+  border-radius: 14px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  border: 1px solid var(--azul);
+  transition: all 0.25s ease;
+}
+
+.referencia-btn:hover {
+  background: var(--azul);
+  color: #ffffff;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(62,121,165,0.12);
+}
+
+.referencia-btn:active { transform: translateY(-2px) scale(0.99); }
+
+
 /* =============================================
    RESPONSIVE — TESTIMONIOS
    ============================================= */
